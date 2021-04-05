@@ -5,8 +5,10 @@ const passport = require('passport');
 const passportLibrary = require('passport');
 const cookieParser = require("cookie-parser");
 const bcrypt = require('bcryptjs');
-const expressSession = require("express-session");
+const session = require("express-session");
 const bodyParser = require("body-parser");
+const flash = require("connect-flash");
+
 
 require('dotenv').config();
 
@@ -23,14 +25,34 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-const usersRouter = require('./routes/users');
-// const subjectsRouter = require('./routes/subjects');
-// const projectsRouter = require('./routes/projects');
-
-// app.use('/subjects', subjectsRouter);
-app.use('/users', usersRouter);
-// app.use('/projects', projectsRouter);
-
-app.listen(port, () => {
-    console.log('Server is running on port: ' + port);
-});
+// Express session
+app.use(
+    session({
+      secret: 'secret',
+      resave: true,
+      saveUninitialized: true
+    })
+  );
+  
+  // Passport middleware
+  app.use(passport.initialize());
+  app.use(passport.session());
+  
+  // Connect flash
+  app.use(flash());
+  
+  // Global variables
+  app.use(function(req, res, next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+  });
+  
+  // Routes
+  app.use('/users', require('./routes/users.js'));
+  
+  const PORT = process.env.PORT || 5000;
+  
+  app.listen(PORT, console.log(`Server running on  ${PORT}`));
+  
