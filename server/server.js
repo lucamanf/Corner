@@ -1,23 +1,10 @@
 const express = require('express');
-const cors = require("cors");
+const path = require('path');
 const mongoose = require('mongoose');
-const passport = require('passport');
-const passportLibrary = require('passport');
-const cookieParser = require("cookie-parser");
-const bcrypt = require('bcryptjs');
-const session = require("express-session");
-const bodyParser = require("body-parser");
-const flash = require("connect-flash");
-
-
 require('dotenv').config();
-
 const app = express();
-const port = process.env.port || 5000;
 
-app.use(cors());
-app.use(express.json());
-
+//Init Database
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
@@ -25,34 +12,25 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-// Express session
-app.use(
-    session({
-      secret: 'secret',
-      resave: true,
-      saveUninitialized: true
-    })
-  );
-  
-  // Passport middleware
-  app.use(passport.initialize());
-  app.use(passport.session());
-  
-  // Connect flash
-  app.use(flash());
-  
-  // Global variables
-  app.use(function(req, res, next) {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
-    next();
+// Init Middleware
+app.use(express.json());
+
+// Define Routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/projects', require('./routes/api/projects'));
+app.use('/api/subjects', require('./routes/api/subjects'));
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
-  
-  // Routes
-  app.use('/users', require('./routes/users.js'));
-  
-  const PORT = process.env.PORT || 5000;
-  
-  app.listen(PORT, console.log(`Server running on  ${PORT}`));
-  
+}
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
