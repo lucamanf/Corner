@@ -20,6 +20,9 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/projects', require('./routes/api/projects'));
 app.use('/api/subjects', require('./routes/api/subjects'));
+app.get('/', function(req, res) {
+  res.send('hello world');
+});
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
