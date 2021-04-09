@@ -13,6 +13,7 @@ import setAuthToken from './utils/setAuthToken';
 import './index.css';
 
 import './App.css';
+import Nav from './components/layout/navbar/navbar.component';
 
 const App = () => {
   useEffect(() => {
@@ -32,7 +33,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Navbar />
+          <Nav />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
