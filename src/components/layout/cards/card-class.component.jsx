@@ -8,7 +8,7 @@ class Cards extends Component {
     super();
 
     this.state = {
-      project: [],
+      projects: [],
     };
   }
 
