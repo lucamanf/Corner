@@ -36,7 +36,7 @@ export const NotFound = () => {
             <h1 className="text-6xl font-thin text-center text-gray-800">
               Ti sei perso ?
             </h1>
-            <button className="px-3 py-2 text-2xl font-light uppercase transition duration-200 ease-in border-b border-yellow-600 w-50 hover:bg-yellow-600 hover:text-white focus:outline-none">
+            <button className="px-3 py-2 text-2xl font-light uppercase transition duration-200 ease-in border-b border-blue-500 rounded-sm w-50 hover:bg-blue-700 hover:text-white focus:outline-none">
               <Link to="/profiles">Portami alla Home</Link>
             </button>
           </div>
