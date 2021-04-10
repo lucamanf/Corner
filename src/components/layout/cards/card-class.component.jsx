@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { CardList } from "../../card-list/card-list.component";
 
-// import { SearchBox } from "./components/search-box/search-box.component";
+import { SearchBox } from "../../search-box/search-box.component";
 
 class Cards extends Component {
   constructor() {
     super();
     this.state = {
       projects: [],
-      //searchField: "",
+      searchField: "",
     };
   }
 
@@ -19,19 +19,19 @@ class Cards extends Component {
   }
 
   render() {
-    //const { projects, searchField } = this.state;
-    const { projects } = this.state;
-    // const filteredProjects = projects.filter((project) =>
-    //   project.titolo.toLowerCase().includes(searchField.toLocaleLowerCase())
-    // );
+    const { projects, searchField } = this.state;
+    //const { projects } = this.state;
+    const filteredProjects = projects.filter((project) =>
+      project.titolo.toLowerCase().includes(searchField.toLocaleLowerCase())
+    );
 
     return (
       <div class="text-gray-600 body-font">
-        {/* <SearchBox
+        <SearchBox
           placeholder="cerca progetto"
           handleChange={(e) => this.setState({ searchField: e.target.value })}
-        /> */}
-        <CardList projects={projects} />
+        />
+        <CardList projects={filteredProjects} />
       </div>
     );
   }
