@@ -13,7 +13,7 @@ import Posts from "../posts/Posts";
 import Post from "../post/Post";
 import NotFound from "../layout/404/404.component";
 import PrivateRoute from "../routing/PrivateRoute";
-import Cards from "../layout/cards/card-class.component";
+import Projects from "../layout/cards/projects.component";
 
 const Routes = (props) => {
   return (
@@ -23,7 +23,7 @@ const Routes = (props) => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/profiles" component={Profiles} />
-        <Route exact path="/projects" component={Cards} />
+        <Route exact path="/projects" component={Projects} />
         <Route exact path="/profile/:id" component={Profile} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/create-profile" component={ProfileForm} />

@@ -8,7 +8,7 @@ class Cards extends Component {
     super();
 
     this.state = {
-      projects: [],
+      project: [],
     };
   }
 
@@ -36,7 +36,7 @@ class Cards extends Component {
   // }
   render() {
     const { project } = this.state;
-    return <CardList>Here comes JSX !</CardList>;
+    return <CardList project={project}>Here comes JSX !</CardList>;
   }
 }
 
