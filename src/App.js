@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
+import Cards from "./components/layout/cards/card-class.component";
 import Routes from "./components/routing/Routes";
 import { LOGOUT } from "./actions/types";
 
@@ -37,6 +37,7 @@ const App = () => {
           <Nav />
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route export path="/projects" component={Cards}/>
             <Route component={Routes} />
           </Switch>
           <Footer />

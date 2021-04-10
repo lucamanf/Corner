@@ -3,9 +3,9 @@ import { Card } from "../card/card.component";
 
 export const CardList = (props) => {
   return (
-    <div>
-      {props.project.map((projects) => (
-        <Card key={projects._id} project={projects} />
+    <div class="container px-5 py-24 mx-auto flex flex-wrap -m-4">
+      {props.projects.map((project) => (
+        <Card key={project._id} project={project} />
       ))}
     </div>
   );

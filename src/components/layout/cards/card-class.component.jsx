@@ -6,13 +6,11 @@ import { CardList } from "../../card-list/card-list.component";
 class Cards extends Component {
   constructor() {
     super();
-
     this.state = {
       projects: [],
+      //searchField: "",
     };
   }
-
-  // searchField: "",
 
   componentDidMount() {
     fetch("https://corner-mern.herokuapp.com/api/projects/getAll")
@@ -20,31 +18,23 @@ class Cards extends Component {
       .then((project) => this.setState({ projects: project }));
   }
 
-  // render() {
-  //   const { projects, searchField } = this.state;
-  //   const filteredProject = projects.filter((project) =>
-  //     project.nomemateria
-  //       .toLowerCase()
-  //       .includes(searchField.toLocaleLowerCase())
-  //   );
-
-  //   return (
-  //     <div>
-  //       <CardList project={filteredProject} />
-  //     </div>
-  //   );
-  // }
   render() {
-    const { project } = this.state;
-    return <CardList project={project}>Here comes JSX !</CardList>;
+    //const { projects, searchField } = this.state;
+    const { projects } = this.state;
+    // const filteredProjects = projects.filter((project) =>
+    //   project.titolo.toLowerCase().includes(searchField.toLocaleLowerCase())
+    // );
+
+    return (
+      <div class="text-gray-600 body-font">
+        {/* <SearchBox
+          placeholder="cerca progetto"
+          handleChange={(e) => this.setState({ searchField: e.target.value })}
+        /> */}
+        <CardList projects={projects} />
+      </div>
+    );
   }
 }
 
 export default Cards;
-
-{
-  /* <SearchBox
-placeholder="search project"
-handleChange={(e) => this.setState({ searchField: e.target.value })}
-/> */
-}
