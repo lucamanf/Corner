@@ -1,19 +1,20 @@
-import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Landing from './components/layout/Landing';
-import Routes from './components/routing/Routes';
-import { LOGOUT } from './actions/types';
+import React, { Fragment, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+import Routes from "./components/routing/Routes";
+import { LOGOUT } from "./actions/types";
 
 // Redux
-import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
-import './index.css';
+import { Provider } from "react-redux";
+import store from "./store";
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./utils/setAuthToken";
+import "./index.css";
 
-import './App.css';
-import Nav from './components/layout/navbar/navbar.component';
+//import './App.css';
+import Nav from "./components/layout/navbar/navbar.component";
+import Footer from "./components/layout/footer/footer.component";
 
 const App = () => {
   useEffect(() => {
@@ -24,7 +25,7 @@ const App = () => {
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
-    window.addEventListener('storage', () => {
+    window.addEventListener("storage", () => {
       if (!localStorage.token) store.dispatch({ type: LOGOUT });
     });
   }, []);
@@ -38,6 +39,7 @@ const App = () => {
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
           </Switch>
+          <Footer />
         </Fragment>
       </Router>
     </Provider>
