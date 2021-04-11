@@ -1,88 +1,52 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
+
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from "swiper";
-import "swiper/swiper-bundle.css";
-import "./swipe.style.css";
 
-SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
+// Import Swiper styles
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/scrollbar/scrollbar.scss";
 
-function Swipe() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const [controlledSwiper, setControlledSwiper] = useState(null);
-
-  const slides = [];
-  for (let i = 0; i < 5; i += 1) {
-    slides.push(
-      <SwiperSlide key={`slide-${i}`} tag="li">
-        <img
-          src={`https://picsum.photos/id/${i + 1}/500/300`}
-          style={{ listStyle: "none" }}
-          alt={`Slide ${i}`}
-        />
-      </SwiperSlide>
-    );
+export class Swipe extends Component {
+  constructor() {
+    super();
+    this.state = {
+      projects: [],
+    };
   }
 
-  const thumbs = [];
-  for (let i = 0; i < 5; i += 1) {
-    thumbs.push(
-      <SwiperSlide key={`thumb-${i}`} tag="li" style={{ listStyle: "none" }}>
-        <img
-          src={`https://picsum.photos/id/${i}/163/100`}
-          alt={`Thumbnail ${i}`}
-        ></img>
-      </SwiperSlide>
-    );
+  componentDidMount() {
+    fetch("https://corner-mern.herokuapp.com/api/projects/getAll")
+      .then((response) => response.json())
+      .then((project) => this.setState({ projects: project }));
   }
 
-  const slides2 = [];
-  for (let i = 9; i < 14; i += 1) {
-    slides2.push(
-      <SwiperSlide key={`slide-${i}`} tag="li">
-        <img
-          src={`https://picsum.photos/id/${i + 1}/500/300`}
-          style={{ listStyle: "none" }}
-          alt={`Slide ${i}`}
-        />
-      </SwiperSlide>
-    );
-  }
-
-  return (
-    <React.Fragment>
+  render() {
+    const { projects } = this.state;
+    return (
       <Swiper
-        id="main"
-        thumbs={{ swiper: thumbsSwiper }}
-        controller={{ control: controlledSwiper }}
-        tag="section"
-        wrapperTag="ul"
-        navigation
-        pagination
-        spaceBetween={0}
-        slidesPerView={1}
-        onInit={(swiper) => console.log("Swiper initialized!", swiper)}
-        onSlideChange={(swiper) => {
-          console.log("Slide index changed to: ", swiper.activeIndex);
-        }}
-        onReachEnd={() => console.log("Swiper end reached")}
-      >
-        {slides}
-      </Swiper>
-
-      <Swiper
-        id="thumbs"
-        spaceBetween={5}
+        spaceBetween={50}
         slidesPerView={3}
-        onSwiper={setThumbsSwiper}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
       >
-        {thumbs}
+        {projects.map((project) => (
+          <SwiperSlide key={project._id} project={project}>
+            <div>
+              <img src={project.image_src}></img>
+              <h2>{project.titolo}</h2>
+              <p>{project.descrizione}</p>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
-
-      <Swiper id="controller" onSwiper={setControlledSwiper}>
-        {slides2}
-      </Swiper>
-    </React.Fragment>
-  );
+    );
+  }
 }
 
 export default Swipe;

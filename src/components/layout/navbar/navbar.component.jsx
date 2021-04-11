@@ -10,7 +10,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const authLinks = (
     <>
-      <div className="flex items-center justify-center space-x-8 lg:flex md:hidden sm:hidden">
+      <div className="flex items-center justify-center space-x-8 xl:flex lg:flex md:hidden sm:hidden">
         <Link to="/projects">
           <h1 className="flex flex-row items-center justify-center text-lg text-white">
             All Projects
@@ -50,7 +50,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </h1>
         </Link>
       </div>
-      <div className="flex items-end justify-end md:hidden sm:hidden">
+      <div className="flex items-end justify-end xl:flex lg:flex sm:hidden">
         <div className="px-4 ">
           <Link to="/create-project">
             <button className="flex flex-row items-center justify-center px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
@@ -95,7 +95,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
         </div>
       </div>
 
-      <div class="flex items-end justify-end lg:hidden">
+      <div class="flex items-end justify-end xl:hidden lg:hidden">
         <button
           aria-label="Open Menu"
           title="Open Menu"
@@ -227,7 +227,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const guestLinks = (
     <>
-      <div className="flex flex-wrap items-center justify-center space-x-8 lg:flex md:hidden sm:hidden">
+      <div className="flex flex-wrap items-center justify-center space-x-8 xl:flex lg:flex md:hidden sm:hidden">
         <Link to="/projects">
           <h1 className="flex flex-row items-center justify-center text-lg text-white">
             All Projects
@@ -248,7 +248,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
           </h1>
         </Link>
       </div>
-      <div className="flex items-end justify-end lg:flex md:hidden sm:hidden">
+      <div className="flex items-end justify-end xl:flex lg:flex md:hidden sm:hidden">
         <Link to="/login">
           <button className="flex flex-row items-center justify-center px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
             Login
@@ -270,7 +270,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
         </Link>
       </div>
 
-      <div className="flex items-end justify-end lg:hidden">
+      <div className="flex items-end justify-end xl:hidden lg:hidden">
         <button
           aria-label="Open Menu"
           title="Open Menu"
