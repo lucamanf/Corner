@@ -1,19 +1,30 @@
 import React from "react";
 
 export const Card = (props) => (
-  <div class="p-4 md:w-1/3 ">
-    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-2xl overflow-hidden">
+  <div className="flex items-center m-3">
+    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg">
       <img
-        class="lg:h-48 md:h-36 w-full object-cover object-center px-2 py-2 rounded-2xl"
-        alt="project"
+        className="w-full"
         src={props.project.image_src}
+        alt="Sunset in the mountains"
       />
-      <div class="p-6">
-        <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-          {props.project.titolo}
-        </h2>
-        <p class="flex items-center flex-wrap">{props.project.descrizione}</p>
+      <div className="px-6 py-4">
+        <div className="mb-2 text-xl font-bold">{props.project.titolo}</div>
+        <p className="text-base text-gray-700">{props.project.descrizione}</p>
+      </div>
+      <div className="px-6 py-4">
+        <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
+          #photography
+        </span>
+        <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
+          #travel
+        </span>
+        <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
+          #winter
+        </span>
       </div>
     </div>
   </div>
 );
+
+export default Card;

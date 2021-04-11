@@ -28,7 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
     <Fragment>
       <div className="relative">
         <img
-          src="https://visitaly.jp/enitwp/wp-content/uploads/2020/06/Isola-di-San-Giorgio-Maggiore-Venezia-Veneto-GettyImages-664613982.jpg?set=set2&size=1200x700"
+          src="https://visitaly.jp/enitwp/wp-content/uploads/2020/06/Isola-di-San-Giorgio-Maggiore-Venezia-Veneto-GettyImages-664613982.jpg"
           className="absolute inset-0 object-cover w-full h-full "
           alt="BG-IMG"
         />
