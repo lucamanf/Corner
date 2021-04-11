@@ -38,10 +38,6 @@ const App = () => {
           <Nav />
           <Switch>
             <Route exact path="/" component={Landing} />
-<<<<<<< HEAD
-            <Route export path="/projects" component={Cards} />
-=======
->>>>>>> 80a568a80c4fdf67f616e3d030794176172a3987
             <Route component={Routes} />
           </Switch>
           <Swipe />
