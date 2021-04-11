@@ -16,6 +16,7 @@ import NotFound from "../layout/404/404.component";
 import PrivateRoute from "../routing/PrivateRoute";
 import Projects from "../layout/cards/projects.component";
 import ProjectDescription from "../project-description/project-description.component";
+import Content from "../content/content.component";
 
 const Routes = (props) => {
   return (
@@ -24,6 +25,7 @@ const Routes = (props) => {
       <Switch className="container">
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/home" component={Content} />
         <Route exact path="/profiles" component={Profiles} />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/profile/:id" component={Profile} />
@@ -34,7 +36,11 @@ const Routes = (props) => {
         <PrivateRoute exact path="/add-education" component={AddEducation} />
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/posts/:id" component={Post} />
-        <PrivateRoute exact path="/create-project" component={ProjectDescription} />
+        <PrivateRoute
+          exact
+          path="/create-project"
+          component={ProjectDescription}
+        />
         <Route component={NotFound} />
       </Switch>
     </section>

@@ -15,7 +15,6 @@ import "./index.css";
 //import './App.css';
 import Nav from "./components/layout/navbar/navbar.component";
 import Footer from "./components/layout/footer/footer.component";
-import Swipe from "./components/swipe/swipe.component";
 
 const App = () => {
   useEffect(() => {
@@ -40,7 +39,7 @@ const App = () => {
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
           </Switch>
-          <Swipe />
+
           <Footer />
         </Fragment>
       </Router>
