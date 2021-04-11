@@ -56,12 +56,17 @@ export const ProjectDescription = () => {
             >
               Aggiungi Progetto
             </button>
-            <a
-              className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800"
-              href="#"
+            <button
+              className="px-4 py-2 font-bold text-white bg-gray-300 rounded hover:bg-red-500 focus:outline-none focus:shadow-outline"
+              type="button"
             >
-              Cancella
-            </a>
+              <a
+                className="inline-block text-sm font-bold text-white align-baseline "
+                href="#"
+              >
+                Cancella
+              </a>
+            </button>
           </div>
         </form>
       </div>
