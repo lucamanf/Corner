@@ -14,6 +14,7 @@ import Post from "../post/Post";
 import NotFound from "../layout/404/404.component";
 import PrivateRoute from "../routing/PrivateRoute";
 import Projects from "../layout/cards/projects.component";
+import ProjectDescription from "../project-description/project-description.component";
 
 const Routes = (props) => {
   return (
@@ -32,6 +33,7 @@ const Routes = (props) => {
         <PrivateRoute exact path="/add-education" component={AddEducation} />
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/posts/:id" component={Post} />
+        <PrivateRoute exact path="/create-project" component={ProjectDescription} />
         <Route component={NotFound} />
       </Switch>
     </section>
