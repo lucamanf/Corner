@@ -20,13 +20,12 @@ class Cards extends Component {
 
   render() {
     const { projects, searchField } = this.state;
-    //const { projects } = this.state;
     const filteredProjects = projects.filter((project) =>
       project.titolo.toLowerCase().includes(searchField.toLocaleLowerCase())
     );
 
     return (
-      <div class="text-gray-600 body-font">
+      <div className="text-gray-600 body-font">
         <SearchBox
           placeholder="cerca progetto"
           handleChange={(e) => this.setState({ searchField: e.target.value })}

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./components/layout/Landing";
-import Cards from "./components/layout/cards/card-class.component";
+import Project from "./components/layout/cards/projects.component";
 import Routes from "./components/routing/Routes";
 import { LOGOUT } from "./actions/types";
 
@@ -38,7 +38,10 @@ const App = () => {
           <Nav />
           <Switch>
             <Route exact path="/" component={Landing} />
+<<<<<<< HEAD
             <Route export path="/projects" component={Cards} />
+=======
+>>>>>>> 80a568a80c4fdf67f616e3d030794176172a3987
             <Route component={Routes} />
           </Switch>
           <Swipe />

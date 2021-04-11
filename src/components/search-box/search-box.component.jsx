@@ -1,17 +1,18 @@
 import React from "react";
 
 export const SearchBox = ({ placeholder, handleChange }) => (
-  <div class="p-8">
-    <div class=" bg-gray-100 flex items-center rounded-full shadow-xl mb-20 mr-20 ml-20 mt-5">
+  <div className="container btn">
+  <div className="p-8">
+    <div className="flex items-center mt-5 mb-20 ml-20 mr-20 bg-gray-100 rounded-full shadow-xl ">
       <input
-        class="rounded-l-full w-full py-0 px-6 bg-gray-100 text-gray-700 leading-tight focus:outline-none text-lg font-mono"
+        className="w-full px-6 py-0 font-mono text-lg leading-tight text-gray-700 bg-gray-100 rounded-l-full focus:outline-none"
         id="search"
         type="text"
         placeholder="Search"
         onChange={handleChange}
       />
-      <div class="p-4">
-        <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+      <div className="p-4">
+        <button className="flex items-center justify-center w-12 h-12 p-2 text-white bg-blue-500 rounded-full hover:bg-blue-400 focus:outline-none">
           <svg
             className="w-6 h-6"
             fill="none"
@@ -29,5 +30,6 @@ export const SearchBox = ({ placeholder, handleChange }) => (
         </button>
       </div>
     </div>
+  </div>
   </div>
 );

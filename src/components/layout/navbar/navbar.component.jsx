@@ -52,7 +52,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
       </div>
       <div className="flex items-end justify-end ">
         <div className="px-4 ">
-          <Link to="/dashboard">
+          <Link to="/create-project">
             <button className="flex flex-row items-center justify-center px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
               Inserisci
               <svg
