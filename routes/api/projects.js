@@ -7,10 +7,9 @@ const auth = require('../../middleware/auth');
 
 router.post('/add', auth, (req, res) => {
 
-  console.log(req.user);
-    
   const {titolo, materia, partecipanti, date, descrizione, contenuto, image_src} = req.body;
-  
+
+
   //Controllo se materia può essere postata
 
   var found = false;
@@ -24,6 +23,31 @@ router.post('/add', auth, (req, res) => {
   if (!found){
     return res.status(403).json('Non hai i permessi per postare su questa materia');
   }
+
+
+  if (req.body.updateId){
+    Project.findByIdAndUpdate({_id: req.body.updateId}, 
+      {
+        titolo: titolo,
+        materia: materia,
+        image_src: image_src,
+        contenuto: contenuto,
+        descrizione: descrizione,
+        date: date,
+        partecipanti: partecipanti
+      },
+      { upsert: true },
+      function (err, result) {
+        if (err){
+          return res.status(400).json("errore");
+        } else {
+          return res.json(result);
+        }
+      }
+      )
+      return 0;
+  }
+     
 
   const newProject = new Project({
     titolo,
@@ -68,6 +92,21 @@ router.get('/getAll', (req, res) => {
 router.get('/getAllBySubject', (req, res) => {
   
   Project.find({materia : req.body.id}).populate("materia")
+    .then((resp) => {
+      let projects = resp;
+      projects.forEach(project => {
+        project.materia = project.materia.materia;
+      })
+      res.json(projects);
+    });
+
+})
+
+// Get all projects by subject
+
+router.get('/getAllByTeacher', (req, res) => {
+  
+  Project.find({created_by : req.body.id}).populate("materia")
     .then((resp) => {
       let projects = resp;
       projects.forEach(project => {
