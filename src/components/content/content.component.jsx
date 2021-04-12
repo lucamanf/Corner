@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Swipe from "../swipe/swipe.component";
+import Example from "../swipe/carousel/bootstrap.carousel";
+import Carousel from "../swipe/coverflow.component";
 
 export const Content = () => {
   return (
@@ -122,7 +123,6 @@ export const Content = () => {
           </Link>
         </div>
       </div>
-      <Swipe />
     </>
   );
 };
