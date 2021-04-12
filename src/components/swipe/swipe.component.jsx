@@ -1,3 +1,4 @@
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import React, { Component } from "react";
 
 // Import Swiper React components
@@ -9,6 +10,7 @@ import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 export class Swipe extends Component {
   constructor() {
     super();
@@ -36,11 +38,17 @@ export class Swipe extends Component {
         onSlideChange={() => console.log("slide change")}
       >
         {projects.map((project) => (
-          <SwiperSlide key={project._id} project={project}>
-            <div>
-              <img src={project.image_src}></img>
-              <h2>{project.titolo}</h2>
-              <p>{project.descrizione}</p>
+          <SwiperSlide key={project._id} project={project} className="slide">
+            <div className="slide-content">
+              <div className="slide-image-card">
+                <img src={project.image_src}></img>
+              </div>
+              <div className="slide-title-card">
+                <h2>{project.titolo}</h2>
+              </div>
+              <div className="slide-description-card">
+                <p>{project.descrizione}</p>
+              </div>
             </div>
           </SwiperSlide>
         ))}
