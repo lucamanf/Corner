@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Example from "../swipe/carousel/bootstrap.carousel";
-import Carousel from "../swipe/coverflow.component";
 
 export const Content = () => {
   return (

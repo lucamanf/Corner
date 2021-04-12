@@ -242,7 +242,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
       </div>
       <div className="flex items-end justify-end invisible lg:visible">
         <Link to="/login">
-          <button className="flex flex-row items-center justify-center px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
+          <button className="flex flex-row items-center justify-center px-4 py-2 font-bold text-white transition duration-300 ease-in-out transform bg-blue-500 rounded hover:-translate-y-1 hover:scale-100 hover:bg-blue-700">
             Login
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -289,8 +289,8 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
             <div className="p-5 bg-white border rounded shadow-sm">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <a
-                    href="/"
+                  <Link
+                    to="/home"
                     aria-label="Company"
                     title="Company"
                     className="inline-flex items-center"
@@ -313,7 +313,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                       Corner
                     </span>
-                  </a>
+                  </Link>
                 </div>
                 <div>
                   <button
@@ -334,44 +334,14 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
               <nav>
                 <ul className="space-y-4">
                   <li>
-                    <a
-                      href="/"
+                    <Link
+                      to="/projects"
                       aria-label="Our product"
                       title="Our product"
                       className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     >
-                      Product
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      aria-label="Our product"
-                      title="Our product"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Features
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      aria-label="Product pricing"
-                      title="Product pricing"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      aria-label="About us"
-                      title="About us"
-                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      About us
-                    </a>
+                      All Projects
+                    </Link>
                   </li>
                   <li>
                     <Link
@@ -404,9 +374,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
               </h1>
             </Link>
           </h1>
-          <Fragment className="sm:flex-shrink-0">
-            {isAuthenticated ? authLinks : guestLinks}
-          </Fragment>
+          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         </div>
       </div>
     </div>
