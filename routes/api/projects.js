@@ -20,7 +20,7 @@ router.post('/add', auth, (req, res) => {
       }
   }
 
-  if (!found){
+  if (!found && req.user.ruolo != 'admin'){
     return res.status(403).json('Non hai i permessi per postare su questa materia');
   }
 
@@ -102,7 +102,7 @@ router.get('/getAllBySubject', (req, res) => {
 
 })
 
-// Get all projects by subject
+// Get all projects by teacher
 
 router.get('/getAllByTeacher', (req, res) => {
   
@@ -115,6 +115,36 @@ router.get('/getAllByTeacher', (req, res) => {
       res.json(projects);
     });
 
+})
+
+// Delete a project
+
+router.delete('/deleteProject', auth, (req, res) => {
+
+    //Controllo se materia può essere postata
+
+    var found = false;
+    for(var i = 0; i < req.user.materie.length; i++) {
+        if (req.user.materie[i] == materia) {
+            found = true;
+            break;
+        }
+    }
+  
+    if (!found && req.user.ruolo != 'admin'){
+      return res.status(403).json('Non hai i permessi per postare su questa materia');
+    }
+
+  Project.findByIdAndDelete(req.body.id, function (err, docs) {
+    if (err){
+        console.log(err);
+        res.status(400).json('Errore');
+    }
+    else{
+        console.log("Deleted : ", docs);
+        res.json('deleted');
+    }
+});
 })
 
 
