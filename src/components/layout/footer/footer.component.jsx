@@ -32,10 +32,8 @@ export const Footer = () => {
             </span>
           </Link>
           <div className="mt-6 lg:max-w-sm">
-            <p className="text-sm text-gray-800">Suca.</p>
-            <p className="mt-4 text-sm text-gray-800">
-              Ringraziamo Coco Finanza, Causo Stronzo e tutti i so filistei.
-            </p>
+            <p className="text-sm text-gray-800">Mona chi legge.</p>
+            <p className="mt-4 text-sm text-gray-800">Giampiteck.</p>
           </div>
         </div>
         <div className="space-y-2 text-sm">

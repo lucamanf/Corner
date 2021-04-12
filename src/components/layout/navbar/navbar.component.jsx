@@ -122,10 +122,10 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
             <div class="p-5 bg-white border rounded shadow-sm">
               <div class="flex items-center justify-between mb-4">
                 <div>
-                  <a
-                    href="/"
-                    aria-label="Company"
-                    title="Company"
+                  <Link
+                    to="/home"
+                    aria-label="home"
+                    title="home"
                     class="inline-flex items-center"
                   >
                     <svg
@@ -144,9 +144,9 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                       <rect x="14" y="11" width="7" height="12" />
                     </svg>
                     <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                      Company
+                      Corner
                     </span>
-                  </a>
+                  </Link>
                 </div>
                 <div>
                   <button
@@ -167,54 +167,46 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
               <nav>
                 <ul class="space-y-4">
                   <li>
-                    <a
-                      href="/"
+                    <Link
+                      to="/projects"
                       aria-label="Our product"
                       title="Our product"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     >
-                      Product
-                    </a>
+                      All projects
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/"
+                    <Link
+                      to="/dashboard"
                       aria-label="Our product"
                       title="Our product"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     >
-                      Features
-                    </a>
+                      Dashboard
+                    </Link>
                   </li>
+
                   <li>
-                    <a
-                      href="/"
-                      aria-label="Product pricing"
-                      title="Product pricing"
-                      class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      aria-label="About us"
-                      title="About us"
-                      class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    >
-                      About us
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label="Sign up"
-                      title="Sign up"
-                    >
-                      Sign up
-                    </a>
+                    <div className="flex grid flex-col grid-cols-2">
+                      <Link
+                        to="/create-project"
+                        class="inline-flex items-center justify-center mr-4  h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                        aria-label="create-project"
+                        title="create-project"
+                      >
+                        Inserici
+                      </Link>
+                      <Link
+                        onClick={logout}
+                        to="/home"
+                        class="inline-flex items-center justify-center  h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Logout
+                      </Link>
+                    </div>
                   </li>
                 </ul>
               </nav>
@@ -319,7 +311,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                       <rect x="14" y="11" width="7" height="12" />
                     </svg>
                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                      Company
+                      Corner
                     </span>
                   </a>
                 </div>
@@ -382,14 +374,14 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/"
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label="Sign up"
-                      title="Sign up"
+                    <Link
+                      to="/login"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-purple-400 rounded shadow-md hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                      aria-label="login"
+                      title="login"
                     >
-                      Sign up
-                    </a>
+                      Login
+                    </Link>
                   </li>
                 </ul>
               </nav>
