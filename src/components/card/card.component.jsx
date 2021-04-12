@@ -1,8 +1,8 @@
 import React from "react";
 
 export const Card = (props) => (
-  <div className="flex items-center m-3">
-    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg">
+  <div className="flex items-center justify-center m-4">
+    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg sm:max-w-xl">
       <img
         className="w-full"
         src={props.project.image_src}

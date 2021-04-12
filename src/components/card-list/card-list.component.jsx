@@ -3,8 +3,8 @@ import { Card } from "../card/card.component";
 
 export const CardList = (props) => {
   return (
-    <div className="container px-5 py-0.5 mx-auto">
-      <div className="flex flex-wrap -m-4">
+    <div className="container m-7 px-5 py-0.5 mx-auto ">
+      <div className="flex grid flex-wrap lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
         {props.projects.map((project) => (
           <Card key={project._id} project={project} />
         ))}
