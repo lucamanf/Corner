@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ContactFooter from "./standard/contacts.component";
 import CornerComponent from "./standard/corner.component";
 import EndOfFooter from "./standard/endfooter.component";
