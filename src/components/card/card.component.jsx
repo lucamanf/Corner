@@ -1,26 +1,30 @@
 import React from "react";
 
 export const Card = (props) => (
-  <div className="flex items-center justify-center m-4">
-    <div className="max-w-sm overflow-hidden bg-white rounded-lg shadow-lg sm:max-w-xl">
+  <div className="flex items-center justify-center mb-4 lg:m-4">
+    <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg md:max-w-lg">
       <img
-        className="w-full"
+        className="object-cover object-top w-full h-48"
         src={props.project.image_src}
-        alt="Sunset in the mountains"
+        alt="Profile image"
       />
       <div className="px-6 py-4">
-        <div className="mb-2 text-xl font-bold">{props.project.titolo}</div>
-        <p className="text-base text-gray-700">{props.project.descrizione}</p>
+        <h4 className="mb-2 text-xl font-bold truncate">
+          {props.project.titolo}
+        </h4>
+        <p className="text-base text-gray-700 truncate">
+          {props.project.descrizione}
+        </p>
       </div>
       <div className="px-6 py-4">
         <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #photography
+          #{props.project.nomemateria}
         </span>
         <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #travel
+          #E.Fermi
         </span>
-        <span className="inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #winter
+        <span className="inline-block px-3 py-1 my-3 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
+          #{props.project.created_by}
         </span>
       </div>
     </div>

@@ -18,7 +18,7 @@ export const Content = () => {
             "Lorem Ipsum icasoicnasiocnbaosn"
           </p>
         </div>
-        <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-5 sm:row-gap-5 sm:grid-cols-2">
           <a href="/" aria-label="View Item">
             <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
               <img
@@ -28,7 +28,7 @@ export const Content = () => {
               />
               <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                 <p className="mb-4 text-lg font-bold text-gray-100">
-                  Informatica e Meccatronica
+                  Informatica
                 </p>
                 <p className="text-sm tracking-wide text-gray-300">
                   Gli indirizzi Meccanica e Meccatronica ed Informatica e
@@ -104,6 +104,27 @@ export const Content = () => {
             </div>
           </a>
         </div>
+        <a href="/" aria-label="View Item" className="mb-4">
+          <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg justify-items-center items-centerm hover:-translate-y-2 hover:shadow-2xl">
+            <img
+              className="object-cover w-full h-56 md:h-64 xl:h-80"
+              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+              alt=""
+            />
+            <div className="absolute inset-0 px-6 py-4 transition-opacity duration-200 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+              <p className="mb-4 text-lg font-bold text-gray-100">
+                Meccatronica
+              </p>
+              <p className="text-sm tracking-wide text-gray-300">
+                L'indirizzo "SERVIZI PER LA SANITA' e L'ASSISTENZA SOCIALE" E'
+                UN CORSO DI ISTRUZIONE SUPERIORE DELLA DURATA DI 5 ANNI CHE SI
+                CONCLUDE CON IL RILASCIO DI UN DIPLOMA DI SUPERAMENTO DELL'ESAME
+                DI STATO. SOSTITUISCE IL PRECEDENTE CORSO DENOMINATO "SERVIZI
+                SOCIO-SANITARI" DALL'ANNO SCOLASTICO 2017/18.
+              </p>
+            </div>
+          </div>
+        </a>
         <div className="text-center">
           <Link
             to="/projects"
