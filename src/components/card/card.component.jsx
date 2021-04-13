@@ -18,13 +18,13 @@ export const Card = (props) => (
       </div>
       <div className="px-6 py-4">
         <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #{props.project.nomemateria}
+          #{props.project.materia.materia}
         </span>
         <span className="inline-block px-3 py-1 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #E.Fermi
+          #{props.project.materia.sede}
         </span>
         <span className="inline-block px-3 py-1 my-3 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #{props.project.created_by}
+          #{props.project.created_by.nome}
         </span>
       </div>
     </div>
