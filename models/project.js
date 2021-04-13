@@ -9,7 +9,7 @@ const projectSchema = new Schema({
     descrizione:{type:String,required:true,maxLength:200},
     contenuto:{type:Object,required:true},
     image_src:{type:String,required:true},
-    created_by:{type:mongoose.ObjectId,required:true},
+    created_by:{type:mongoose.ObjectId,required:true, ref: "User"},
     created_at:{type : Date, default: Date.now}
 });
 

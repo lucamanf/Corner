@@ -71,33 +71,19 @@ router.post('/add', auth, (req, res) => {
 
 router.get('/getAll', (req, res) => {
   
-  Project.aggregate([{
-      $lookup: {
-          from: "subjects",
-          localField: "materia",
-          foreignField: "_id",
-          as: "nomemateria"
-      }
-  }],function(err,resp){
-      let projects = resp;
-      projects.forEach(project => {
-        project.nomemateria = project.nomemateria[0].materia;
-      })
-      res.json(projects);
-  });
+  Project.find({}).populate("materia").populate("created_by","nome cognome").populate("created_by","nome cognome")
+    .then((projects) =>{
+      res.status(200).json(projects);
+    });
 })
 
 // Get all projects by subject
 
 router.get('/getAllBySubject', (req, res) => {
   
-  Project.find({materia : req.body.id}).populate("materia")
-    .then((resp) => {
-      let projects = resp;
-      projects.forEach(project => {
-        project.materia = project.materia.materia;
-      })
-      res.json(projects);
+  Project.find({materia : req.body.id}).populate("materia").populate("created_by","nome cognome")
+    .then((projects) =>{
+      res.status(200).json(projects);
     });
 
 })
@@ -106,13 +92,9 @@ router.get('/getAllBySubject', (req, res) => {
 
 router.get('/getAllByTeacher', (req, res) => {
   
-  Project.find({created_by : req.body.id}).populate("materia")
-    .then((resp) => {
-      let projects = resp;
-      projects.forEach(project => {
-        project.materia = project.materia.materia;
-      })
-      res.json(projects);
+  Project.find({created_by : req.body.id}).populate("materia").populate("created_by","nome cognome")
+    .then((projects) => {
+      res.status(200).json(projects);
     });
 
 })
