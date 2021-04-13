@@ -16,7 +16,7 @@ import NotFound from "../layout/404/404.component";
 import PrivateRoute from "../routing/PrivateRoute";
 import Projects from "../layout/cards/projects.component";
 import ProjectDescription from "../project-description/project-description.component";
-import Content from "../content/content.component";
+import Content from "../hero/content.component";
 
 const Routes = (props) => {
   return (

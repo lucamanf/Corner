@@ -2,7 +2,7 @@ import React from "react";
 
 export const Card = (props) => (
   <div className="flex items-center justify-center mb-4 lg:m-4">
-    <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-lg md:max-w-lg">
+    <div className="max-w-xs overflow-hidden bg-white rounded-lg shadow-xl md:max-w-lg">
       <img
         className="object-cover object-top w-full h-48"
         src={props.project.image_src}

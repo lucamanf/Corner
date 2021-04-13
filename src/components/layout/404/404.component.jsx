@@ -4,40 +4,14 @@ import { Link } from "react-router-dom";
 export const NotFound = () => {
   return (
     <main className="relative h-screen overflow-hidden bg-white">
-      <header className="absolute top-0 left-0 right-0 z-20">
-        <nav className="container px-6 py-4 mx-auto md:px-12">
-          <div className="items-center justify-between md:flex">
-            <div className="flex items-center justify-between">
-              <div className="md:hidden">
-                <button className="text-gray-800 focus:outline-none">
-                  <svg
-                    className="w-12 h-12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 6H20M4 12H20M4 18H20"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
       <div className="container relative z-10 flex items-center px-6 py-32 mx-auto md:px-12">
         <div className="container relative flex flex-col items-center justify-between px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center w-full mb-16 space-x-12 md:flex-row md:mb-8">
-            <h1 className="text-6xl font-thin text-center text-gray-800">
+          <div className="flex flex-col items-center justify-center w-full mb-16 lg:space-x-10 md:flex-row md:mb-8">
+            <h1 className="mb-4 text-5xl font-thin text-center text-gray-800 md:mb-0">
               Ti sei perso ?
             </h1>
-            <button className="px-3 py-2 text-2xl font-light uppercase transition duration-200 ease-in border-b border-blue-500 rounded-sm w-50 hover:bg-blue-700 hover:text-white focus:outline-none">
-              <Link to="/profiles">Portami alla Home</Link>
+            <button className="px-3 py-2 text-2xl font-thin uppercase transition duration-300 ease-in-out transform border-b border-blue-500 rounded hover:-translate-y-1 hover:scale-100 w-50 hover:bg-blue-700 hover:text-white focus:outline-none">
+              <Link to="/home">Portami alla Home</Link>
             </button>
           </div>
           <div className="relative block w-full mx-auto mt-6 md:mt-0">
