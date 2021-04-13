@@ -10,7 +10,7 @@ export const Content = () => {
             <span className="inline-block mb-1 sm:mb-4">
               POLO TECNICO PROFESSIONALE di Venezia
               <br className="hidden md:block" />
-              "VENDRAMIN CORNER"
+              "VENDRAMIN CORNER."
             </span>
             <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
           </h2>
