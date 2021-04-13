@@ -71,7 +71,7 @@ router.post('/add', auth, (req, res) => {
 
 router.get('/getAll', (req, res) => {
   
-  Project.find({}).populate("materia").populate("created_by","nome cognome").populate("created_by","nome cognome")
+  Project.find({}).populate("materia","-_id").populate("created_by","nome cognome -_id")
     .then((projects) =>{
       res.status(200).json(projects);
     })
@@ -82,7 +82,7 @@ router.get('/getAll', (req, res) => {
 
 router.get('/getAllBySubject', (req, res) => {
   
-  Project.find({materia : req.body.id}).populate("materia").populate("created_by","nome cognome")
+  Project.find({materia : req.body.id}).populate("materia","-_id").populate("created_by","nome cognome -_id")
     .then((projects) =>{
       res.status(200).json(projects);
     })
@@ -94,7 +94,7 @@ router.get('/getAllBySubject', (req, res) => {
 
 router.get('/getAllByTeacher', (req, res) => {
   
-  Project.find({created_by : req.body.id}).populate("materia").populate("created_by","nome cognome")
+  Project.find({created_by : req.body.id}).populate("materia"," -_id").populate("created_by","nome cognome -_id")
     .then((projects) => {
       res.status(200).json(projects);
     })
