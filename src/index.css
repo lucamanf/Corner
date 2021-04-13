@@ -7,3 +7,7 @@
 .menuOpened {
     z-index: 999 !important;
 }
+
+.isMenuOpened {
+    @apply z-50;
+}
