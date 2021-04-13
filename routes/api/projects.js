@@ -61,8 +61,8 @@ router.post('/add', auth, (req, res) => {
   });
 
   newProject.save()
-    .then(() => res.json("Project Added"))
-    .catch((err) => console.log(err));
+    .then(() => res.status(200).json("Project Added"))
+    .catch(err => res.status(400).json('Error: ' + err))
     
 
 });
@@ -74,7 +74,8 @@ router.get('/getAll', (req, res) => {
   Project.find({}).populate("materia").populate("created_by","nome cognome").populate("created_by","nome cognome")
     .then((projects) =>{
       res.status(200).json(projects);
-    });
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 })
 
 // Get all projects by subject
@@ -84,7 +85,8 @@ router.get('/getAllBySubject', (req, res) => {
   Project.find({materia : req.body.id}).populate("materia").populate("created_by","nome cognome")
     .then((projects) =>{
       res.status(200).json(projects);
-    });
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 
 })
 
@@ -95,7 +97,8 @@ router.get('/getAllByTeacher', (req, res) => {
   Project.find({created_by : req.body.id}).populate("materia").populate("created_by","nome cognome")
     .then((projects) => {
       res.status(200).json(projects);
-    });
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 
 })
 
