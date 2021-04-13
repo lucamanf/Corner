@@ -74,7 +74,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                   </li>
 
                   <li>
-                    <div className="flex grid flex-col grid-cols-2">
+                    <div className="grid justify-between grid-cols-2 gap-2.5">
                       <CreateProjetHamburger />
                       <Link
                         onClick={logout}
@@ -82,7 +82,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
                         aria-label="Sign up"
                         title="Sign up"
                       >
-                        <button className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 bg-red-400 rounded shadow-md hover:bg-red-700 focus:shadow-outline focus:outline-none">
+                        <button className="items-center justify-center w-full h-12 font-medium tracking-wide text-white transition duration-200 bg-red-400 rounded shadow-md hover:bg-red-700 focus:shadow-outline focus:outline-none">
                           Logout
                         </button>
                       </Link>
@@ -117,7 +117,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
           <HamburgerSVG />
         </button>
         {isMenuOpen && (
-          <div className="absolute top-0 left-0 w-full">
+          <div className="absolute top-0 left-0 w-full menuOpened">
             <div className="p-5 bg-white border rounded shadow-sm">
               <div className="flex items-center justify-between mb-4">
                 <div>
@@ -154,7 +154,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <div class="bg-gray-900">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative flex grid items-center grid-cols-4 lg:grid-cols-3">
+        <div className="relative grid items-center grid-cols-4 lg:grid-cols-3">
           <CornerHomeButton />
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         </div>

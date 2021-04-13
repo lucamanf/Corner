@@ -114,7 +114,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <div className="mt-4 mb-2 sm:mb-4">
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-300 ease-in-out transform bg-blue-500 rounded shadow-md hover:bg-red-600 hover:-translate-y-1 hover:scale-100 hover:bg-blue-700 focus:shadow-outline focus:outline-none"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-300 ease-in-out transform bg-blue-500 rounded shadow-md hover:bg-red-600 hover:-translate-y-1 hover:scale-100 focus:shadow-outline focus:outline-none"
                       >
                         Accedi
                       </button>
