@@ -24,19 +24,16 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const authLinks = (
     <>
-      <div className="flex items-center justify-center hidden space-x-8 lg:block">
+      <div className="items-center justify-center hidden lg:block">
         <AllProjects />
         <Dashboard />
       </div>
-      <div className="flex items-end justify-end hidden lg:block">
-        <div className="px-4 ">
-          <CreateButton />
-        </div>
-        <div>
-          <Link onClick={logout} to="#!">
-            <LogoutButton />
-          </Link>
-        </div>
+      <div className="items-center justify-center hidden lg:block">
+        <CreateButton />
+
+        <Link onClick={logout} to="#!">
+          <LogoutButton />
+        </Link>
       </div>
 
       <div class="flex items-center justify-end visible lg:hidden">
@@ -154,7 +151,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <div class="bg-gray-900">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative grid items-center grid-cols-2">
+        <div className="relative grid items-center grid-cols-2 lg:grid-cols-3">
           <CornerHomeButton />
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         </div>

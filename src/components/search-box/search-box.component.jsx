@@ -4,7 +4,6 @@ import DropdownIstituto from "./dropdown/dropdown.istituto.component";
 export const SearchBox = ({ handleChange }) => (
   <div className="items-center m-5 bg-gray-200 rounded-md justify-items-center md:container md:mx-auto">
     <div className="grid gap-2 p-4 md:grid-cols-3">
-      <h1 className="justify-center text-3xl text-center md:hidden">SUCA</h1>
       <span className="hidden md:block">
         <DropdownIstituto />
       </span>
@@ -30,7 +29,7 @@ export const SearchBox = ({ handleChange }) => (
         <input
           className="w-full p-2 outline-none"
           type="text"
-          placeholder="Try 'Los Angeles'"
+          placeholder="Prova a cercare sto cazzo"
           onChange={handleChange}
         />
         <button className="p-2 pl-4 pr-4 text-white bg-blue-500 rounded hover:bg-blue-700">
