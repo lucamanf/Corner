@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CornerFooterSVG from "../svg/Corner.svg";
+import LogoCorner from "../../navbar/img/logo.component";
 
 export default function CornerComponent() {
   return (
@@ -10,7 +10,7 @@ export default function CornerComponent() {
       title="Company"
       className="inline-flex items-center"
     >
-      <CornerFooterSVG />
+      <LogoCorner />
       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
         Vendramin Corner
       </span>
