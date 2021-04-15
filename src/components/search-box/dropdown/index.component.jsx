@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ArrowUpSVG from "./svg/arrow.up.component";
+import ArrowDownSVG from "./svg/arrow.down.component";
 const Index = () => {
   const [show, setShow] = useState(false);
 
@@ -12,39 +14,7 @@ const Index = () => {
           Basic Options
         </p>
         <div className="mr-3 text-gray-600 cursor-pointer dark:text-gray-400">
-          {show ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className=" icon icon-tabler icon-tabler-chevron-up"
-              width={20}
-              height={20}
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="icon icon-tabler icon-tabler-chevron-up"
-              width={20}
-              height={20}
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <polyline points="6 15 12 9 18 15" />
-            </svg>
-          )}
+          {show ? <ArrowDownSVG /> : <ArrowUpSVG />}
         </div>
       </div>
       {show && (
