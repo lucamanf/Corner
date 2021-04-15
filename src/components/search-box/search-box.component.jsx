@@ -1,5 +1,4 @@
 import React from "react";
-import DropdownIstituto from "./dropdown/dropdown.istituto.component";
 import Index from "./dropdown/index.component";
 import SearchSVG from "./svg/search.svg.component";
 
@@ -11,7 +10,7 @@ export const SearchBox = ({ handleChange }) => (
 
         <Index />
       </div>
-      <div className="flex items-center p-2 ml-5 mr-2 bg-white rounded shadow-md xl:w-11/12 lg:w-3/5 w-400 text-grey">
+      <div className="flex items-center p-2 ml-5 mr-2 bg-white rounded shadow-md lg:w-11/12 md:w-3/5 w-400 text-grey">
         <SearchSVG />
         <input
           className="w-full p-2 outline-none"

@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <div>
       <div
-        className="flex items-center justify-between w-full bg-white border border-gray-300 rounded cursor-pointer dark:bg-gray-800 dark:border-gray-700"
+        className="flex items-center justify-between w-full py-1 bg-white border border-gray-300 rounded shadow-md cursor-pointer dark:bg-gray-800 dark:border-gray-700"
         onClick={() => setShow(!show)}
       >
         <p className="py-3 pl-3 text-sm font-normal leading-3 tracking-normal text-gray-600 dark:text-gray-400">
