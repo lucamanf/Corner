@@ -32,7 +32,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
           <Dashboard />
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center invisible lg:visible">
+      <div className="flex flex-row items-center justify-end invisible lg:visible">
         <div className="items-center justify-center hidden pr-2 lg:block">
           <CreateButton />
         </div>
@@ -114,7 +114,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-end">
         <div className="items-center justify-center hidden pr-2 lg:block">
           <LoginButton />
         </div>

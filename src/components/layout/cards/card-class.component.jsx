@@ -26,10 +26,11 @@ class Cards extends Component {
 
     return (
       <div className="text-gray-600 body-font">
-        <SearchBox
-          placeholder="cerca progetto"
-          handleChange={(e) => this.setState({ searchField: e.target.value })}
-        />
+        <div className="container px-5 pt-10 pb-5 mx-auto sm:px-6 lg:px-8">
+          <SearchBox
+            handleChange={(e) => this.setState({ searchField: e.target.value })}
+          />
+        </div>
         <CardList projects={filteredProjects} />
       </div>
     );
