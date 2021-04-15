@@ -24,16 +24,28 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const authLinks = (
     <>
-      <div className="items-center justify-center hidden lg:block">
-        <AllProjects />
-        <Dashboard />
+      <div className="flex flex-row items-center justify-center">
+        <div className="items-center justify-center hidden pr-2 lg:block">
+          <AllProjects />
+        </div>
+        <div className="items-center justify-center hidden pr-2 lg:block">
+          <Dashboard />
+        </div>
       </div>
-      <div className="items-center justify-center hidden lg:block">
-        <CreateButton />
-
-        <Link onClick={logout} to="#!">
-          <LogoutButton />
-        </Link>
+      <div className="flex flex-row items-center justify-center">
+        <div className="items-center justify-center hidden pr-2 lg:block">
+          <CreateButton />
+        </div>
+        <div className="items-center justify-center hidden pl-2 lg:block">
+          <Link
+            onClick={logout}
+            to="/home"
+            aria-label="Sign out"
+            title="Sign out"
+          >
+            <LogoutButton></LogoutButton>
+          </Link>
+        </div>
       </div>
 
       <div class="flex items-center justify-end visible lg:hidden">
@@ -96,12 +108,16 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const guestLinks = (
     <>
-      <div className="flex flex-wrap items-center justify-center hidden space-x-8 lg:block">
-        <AllProjects />
+      <div className="flex flex-wrap items-center justify-center">
+        <div className="items-center justify-center hidden pr-2 lg:block">
+          <AllProjects />
+        </div>
       </div>
 
-      <div className="flex items-end justify-end hidden lg:block">
-        <LoginButton />
+      <div className="flex items-center justify-center">
+        <div className="items-center justify-center hidden pr-2 lg:block">
+          <LoginButton />
+        </div>
       </div>
 
       <div className="flex items-end justify-end visible lg:hidden">
@@ -150,8 +166,8 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   return (
     <div class="bg-gray-900">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative grid items-center grid-cols-2 lg:grid-cols-3">
+      <div className="px-2 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="relative grid grid-cols-2 lg:grid-cols-3">
           <CornerHomeButton />
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         </div>
