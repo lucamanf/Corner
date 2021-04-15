@@ -24,7 +24,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
 
   const authLinks = (
     <>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center invisible lg:visible">
         <div className="items-center justify-center hidden pr-2 lg:block">
           <AllProjects />
         </div>
@@ -32,7 +32,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
           <Dashboard />
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center invisible lg:visible">
         <div className="items-center justify-center hidden pr-2 lg:block">
           <CreateButton />
         </div>
@@ -43,7 +43,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
             aria-label="Sign out"
             title="Sign out"
           >
-            <LogoutButton></LogoutButton>
+            <LogoutButton />
           </Link>
         </div>
       </div>
@@ -120,7 +120,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
         </div>
       </div>
 
-      <div className="flex items-end justify-end visible lg:hidden">
+      <div className="flex items-center justify-end visible lg:hidden">
         <button
           aria-label="Open Menu"
           title="Open Menu"
@@ -167,7 +167,7 @@ const Nav = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <div class="bg-gray-900">
       <div className="px-2 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="relative grid grid-cols-2 lg:grid-cols-3">
+        <div className="relative grid grid-cols-4 lg:grid-cols-3">
           <CornerHomeButton />
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         </div>
