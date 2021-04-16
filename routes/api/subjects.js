@@ -43,7 +43,13 @@ router.get("/getAll", (req, res) =>{
     Subject.find({})
     .then(subjects => res.json(subjects))
     .catch(err => res.status(400).json('Error: ' + err));
-})
+});
+
+router.get('/getBySede',(req,res) =>{
+    Subject.find({sede: req.body.sede})
+    .then(subjects => res.json(subjects))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
 
