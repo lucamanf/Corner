@@ -93,7 +93,6 @@ router.get('/getAllBySubject/:id', (req, res) => {
 // Get all projects by teacher
 
 router.get('/getAllByTeacher/:id', (req, res) => {
-  console.log(req.params);
   Project.find({created_by: req.params.id}).populate("materia"," -_id").populate("created_by","nome cognome -_id")
     .then((projects) => {
       res.status(200).json(projects);
