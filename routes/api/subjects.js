@@ -15,22 +15,22 @@ router.post('/add', (req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
   });
 
-router.get("/get", (req, res) => {
+// router.get("/get", (req, res) => {
 
-    const materia = req.body.materia;
-    const sede = req.body.sede;
+//     const materia = req.body.materia;
+//     const sede = req.body.sede;
 
-    Subject.findOne({
-        materia: materia,
-        sede: sede
-    }).then(subject => res.json(subject._id))
-    .catch(err => res.status(400).json('Error: ' + err));
+//     Subject.findOne({
+//         materia: materia,
+//         sede: sede
+//     }).then(subject => res.json(subject._id))
+//     .catch(err => res.status(400).json('Error: ' + err));
 
-});
+// });
 
-router.get("/getById", (req, res) => {
+router.get("/getById/:id", (req, res) => {
 
-    const id = req.body.id;
+    const id = req.params.id;
 
     Subject.findOne({
         _id: id
@@ -45,8 +45,8 @@ router.get("/getAll", (req, res) =>{
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.get('/getBySede',(req,res) =>{
-    Subject.find({sede: req.body.sede},"-_id")
+router.get('/getBySede/:sede',(req,res) =>{
+    Subject.find({sede: req.params.sede},"-_id")
     .then(subjects => res.json(subjects))
     .catch(err => res.status(400).json('Error: ' + err));
 });

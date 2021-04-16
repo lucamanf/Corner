@@ -80,9 +80,9 @@ router.get('/getAll', (req, res) => {
 
 // Get all projects by subject
 
-router.get('/getAllBySubject', (req, res) => {
+router.get('/getAllBySubject/:id', (req, res) => {
   
-  Project.find({materia : req.body.id}).populate("materia","-_id").populate("created_by","nome cognome -_id")
+  Project.find({materia: req.params.id}).populate("materia","-_id").populate("created_by","nome cognome -_id")
     .then((projects) =>{
       res.status(200).json(projects);
     })
@@ -92,14 +92,13 @@ router.get('/getAllBySubject', (req, res) => {
 
 // Get all projects by teacher
 
-router.get('/getAllByTeacher', (req, res) => {
+router.get('/getAllByTeacher/:id', (req, res) => {
   
-  Project.find({created_by : req.body.id}).populate("materia"," -_id").populate("created_by","nome cognome -_id")
+  Project.find({created_by: req.params.id}).populate("materia"," -_id").populate("created_by","nome cognome -_id")
     .then((projects) => {
       res.status(200).json(projects);
     })
     .catch(err => res.status(400).json('Error: ' + err));
-
 })
 
 // Delete a project
