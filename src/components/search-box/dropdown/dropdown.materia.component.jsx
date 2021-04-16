@@ -5,8 +5,8 @@ import ArrowUpSVG from "./svg/arrow.up.component";
 export default function DropDownM() {
   return (
     <Menu as="div" className="relative lg:w-60">
-      <Menu.Button className="inline-flex justify-center w-full px-4 py-5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-gray-100">
-        Matematica
+      <Menu.Button className="inline-flex justify-center w-full px-4 py-5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-md hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-gray-100">
+        Tutte le materie
         <span className="w-5 h-5 ml-2 -mr-1">
           <ArrowUpSVG />
         </span>
@@ -19,7 +19,7 @@ export default function DropDownM() {
               href="#"
               className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
             >
-              Meccatronica
+              Informatica
             </a>
           </Menu.Item>
         </div>
@@ -63,7 +63,7 @@ export default function DropDownM() {
               href="#"
               className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
             >
-              Monella
+              Meccatroia
             </a>
           </Menu.Item>
         </div>
