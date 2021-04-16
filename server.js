@@ -16,7 +16,10 @@ connection.once('open', () => {
 // Init Middleware
 app.use(express.json());
 app.use(cors());
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
