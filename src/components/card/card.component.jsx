@@ -24,7 +24,7 @@ export const Card = (props) => (
           #{props.project.materia.sede}
         </span>
         <span className="inline-block px-3 py-1 my-3 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
-          #{props.project.created_by.nome}
+          #{props.project.created_by.nome} {props.project.created_by.cognome}
         </span>
       </div>
     </div>

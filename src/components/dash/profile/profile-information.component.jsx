@@ -41,8 +41,8 @@ class ProfileInformation extends Component {
     let materie = profile.profiles.materie;
     this.state.materie = materie;
 
-    console.log(profile.profiles);
-    console.log("DOCENTE --------",this.state.materie);
+    // console.log(profile.profiles);
+    // console.log("DOCENTE --------",this.state.materie);
     return (
       <main className="relative h-screen overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-2xl">
         <div className="flex items-start justify-between">
@@ -95,7 +95,7 @@ class ProfileInformation extends Component {
                       </div>
                       <div className="p-4 space-y-1 border-b md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0">
                         <p className="text-gray-600">Sede</p>
-                        <p>{profile.profiles.materie.sede}</p>
+                        <p>{profile.profiles.materie[0].sede}</p>
                       </div>
                     </div>
                   </div>
