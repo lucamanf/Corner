@@ -16,6 +16,8 @@ connection.once('open', () => {
 // Init Middleware
 app.use(express.json());
 app.use(cors());
+res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
