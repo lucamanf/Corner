@@ -46,7 +46,7 @@ router.get("/getAll", (req, res) =>{
 });
 
 router.get('/getBySede',(req,res) =>{
-    Subject.find({sede: req.body.sede})
+    Subject.find({sede: req.body.sede},"-_id")
     .then(subjects => res.json(subjects))
     .catch(err => res.status(400).json('Error: ' + err));
 });
