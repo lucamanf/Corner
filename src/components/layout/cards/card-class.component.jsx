@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { CardList } from "../../card-list/card-list.component";
-
 import { SearchBox } from "../../search-box/search-box.component";
 
 class Cards extends Component {
@@ -28,6 +27,7 @@ class Cards extends Component {
       <div className="text-gray-600 body-font">
         <div className="container px-5 pt-10 pb-5 mx-auto sm:px-6 lg:px-8">
           <SearchBox
+            projects={projects}
             handleChange={(e) => this.setState({ searchField: e.target.value })}
           />
         </div>
