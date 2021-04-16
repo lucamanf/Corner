@@ -19,7 +19,7 @@ export default function DropDownI() {
               href="#"
               className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
             >
-              Tutte le materie
+              Tutte le materie.
             </a>
           </Menu.Item>
         </div>
