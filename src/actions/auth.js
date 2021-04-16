@@ -17,7 +17,8 @@ export const loadUser = () => async dispatch => {
 
     dispatch({
       type: USER_LOADED,
-      payload: res.data
+      payload: res.data.data,
+      // id: localStorage.setItem('id', res.data.data.id)
     });
   } catch (err) {
     dispatch({
@@ -58,7 +59,8 @@ export const login = (email, password) => async dispatch => {
 
     dispatch({
       type: LOGIN_SUCCESS,
-      payload: res.data
+      payload: res.data.data,
+      // id: localStorage.setItem('id', res.data.data.id)
     });
 
     dispatch(loadUser());
