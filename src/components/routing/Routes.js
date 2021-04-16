@@ -17,6 +17,8 @@ import PrivateRoute from "../routing/PrivateRoute";
 import Projects from "../layout/cards/projects.component";
 import ProjectDescription from "../project-description/project-description.component";
 import Content from "../hero/content.component";
+import ProfileInformation from "../dash/profile/profile-information.component";
+import ProjectsInformation from "../dash/projects/projects-information.component";
 
 const Routes = (props) => {
   return (
@@ -29,7 +31,8 @@ const Routes = (props) => {
         <Route exact path="/profiles" component={Profiles} />
         <Route exact path="/projects" component={Projects} />
         <Route exact path="/profile/:id" component={Profile} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/dashboard/profile" component={ProfileInformation} />
+        <PrivateRoute exact path="/dashboard/projects" component={ProjectsInformation} />
         <PrivateRoute exact path="/create-profile" component={ProfileForm} />
         <PrivateRoute exact path="/edit-profile" component={ProfileForm} />
         <PrivateRoute exact path="/add-experience" component={AddExperience} />
