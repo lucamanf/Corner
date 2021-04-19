@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import Projects from "../projects/projects.component";
 import Profile from "../profile/profile.component";
 // import Cards from "../../layout/cards/card-class.component";
-import CardList from "../../card-list/card-list.component";
+import CardList from "../../card-list-teacher/card-list-teacher.component";
 
 class ProjectsInformation extends Component {
   constructor() {
@@ -15,9 +15,9 @@ class ProjectsInformation extends Component {
   async componentDidMount() {
     // console.log("ID component di mount ----", localStorage.getItem("id"));
     const response = await fetch(
-      `http://corner-mern.herokuapp.com/api/projects/getAllByTeacher/${localStorage.getItem(
-        "id"
-      )}`
+      `https://corner-mern.herokuapp.com/api/projects/getAllByTeacher/${
+        (localStorage.getItem("id"))
+      }`
     )
       .then((response) => response.json())
       .then((project) => this.setState({ projects: project }));
