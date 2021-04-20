@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RichEditor from "../richTextEditor/richTextEditor.component";
+// import TextEditor from "../textEditor/textEditor.component";
 
 export const ProjectDescription = () => {
   return (
@@ -8,6 +9,7 @@ export const ProjectDescription = () => {
       <div className="w-full max-w-xl">
         <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
           <RichEditor />
+          {/* <TextEditor /> */}
           <div className="mb-4">
             <label
               className="block mb-2 text-sm font-semibold text-gray-600"
