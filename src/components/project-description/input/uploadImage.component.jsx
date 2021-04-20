@@ -2,7 +2,7 @@ import React from "react";
 
 export const UploadImage = () => {
   return (
-    <div>
+    <label className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
       <div className="flex flex-row items-center justify-center text-base leading-normal">
         Carica immagine
         <svg
@@ -15,7 +15,7 @@ export const UploadImage = () => {
         </svg>
         <input type="file" className="hidden" accept="image/*" />
       </div>
-    </div>
+    </label>
   );
 };
 
