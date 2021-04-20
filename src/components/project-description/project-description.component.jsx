@@ -6,7 +6,7 @@ import AddProject from "./input/addProject.component";
 import Cancel from "./input/cancel.component";
 import { Description } from "./input/description.component";
 import Subject from "./input/subject.component";
-import UploadImage from "./input/uploadImgae.component";
+import UploadImage from "./input/uploadImage.component";
 
 export const ProjectDescription = () => {
   return (
