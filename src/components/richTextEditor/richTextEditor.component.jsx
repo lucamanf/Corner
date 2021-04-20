@@ -3,6 +3,8 @@ import {Editor, EditorState, getDefaultKeyBinding, RichUtils} from "draft-js";
 import './richText.css';
 import '../../../node_modules/draft-js/dist/Draft.css';
 
+
+// PER MODIFICARE IL BORDO DOVE INSERIRE IL TESTO VEDERE <div class="demo-editor rdw-editor-main"></div>
 class RichEditor extends React.Component {
   constructor(props) {
     super(props);
