@@ -1,11 +1,9 @@
 import React from "react";
-import {Editor, EditorState, getDefaultKeyBinding, RichUtils} from "draft-js";
-import './richText.css';
-import '../../../node_modules/draft-js/dist/Draft.css';
+import { Editor, EditorState, getDefaultKeyBinding, RichUtils } from "draft-js";
+import "./richText.css";
+import "../../../node_modules/draft-js/dist/Draft.css";
 
-
-// PER MODIFICARE IL BORDO DOVE INSERIRE IL TESTO VEDERE <div class="demo-editor rdw-editor-main"></div>
-class RichEditor extends React.Component {
+class RichTextEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
@@ -84,7 +82,7 @@ class RichEditor extends React.Component {
             handleKeyCommand={this.handleKeyCommand}
             keyBindingFn={this.mapKeyToEditorCommand}
             onChange={this.onChange}
-            placeholder="Scrivi il tuo progetto..."
+            placeholder="Tell a story..."
             ref="editor"
             spellCheck={true}
           />
@@ -197,4 +195,4 @@ const InlineStyleControls = (props) => {
   );
 };
 
-export default RichEditor;
+export default RichTextEditor;
