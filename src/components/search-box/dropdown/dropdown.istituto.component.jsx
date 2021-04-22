@@ -15,67 +15,90 @@ export default function DropDownI() {
       <Menu.Items className="absolute left-0 w-56 mt-2.5 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Tutte le materie.
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm ${
+                  active ? "bg-blue-500 text-white" : "text-gray-700"
+                }`}
+              >
+                Tutte le materie.
+              </a>
+            )}
           </Menu.Item>
         </div>
 
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Informatica
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm 
+                ${active ? "bg-blue-500 text-white" : "text-gray-700"} `}
+              >
+                Informatica
+              </a>
+            )}
           </Menu.Item>
         </div>
 
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Biologico
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm ${
+                  active ? "bg-blue-500 text-white" : "text-gray-700 "
+                } `}
+              >
+                Biologico
+              </a>
+            )}
           </Menu.Item>
         </div>
 
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Nautico
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm ${
+                  active ? "bg-blue-500 text-white" : "text-gray-700 "
+                }`}
+              >
+                Nautico
+              </a>
+            )}
           </Menu.Item>
         </div>
 
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Psicogiampitec
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm ${
+                  active ? "bg-blue-500 text-white" : "text-gray-700"
+                }  `}
+              >
+                Psicogiampitec
+              </a>
+            )}
           </Menu.Item>
         </div>
 
         <div className="py-1">
           <Menu.Item>
-            <a
-              href="#"
-              className="flex items-center px-4 py-2 text-sm text-gray-700 group hover:bg-blue-500 hover:text-white"
-            >
-              Meccatronica
-            </a>
+            {({ active }) => (
+              <a
+                href="#"
+                className={`flex items-center px-4 py-2 text-sm ${
+                  active ? "bg-blue-500 text-white" : "text-gray-700"
+                } `}
+              >
+                Meccatronica
+              </a>
+            )}
           </Menu.Item>
         </div>
       </Menu.Items>
