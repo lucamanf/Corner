@@ -1,7 +1,11 @@
 import React from "react";
 import { Editor, EditorState, getDefaultKeyBinding, RichUtils } from "draft-js";
+// import {stateToHTML} from 'draft-js-export-html';
+import { convertToRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
 import "./RichText.css";
 import "../../../node_modules/draft-js/dist/Draft.css";
+import ProjectDescription from "../project-description/project-description.component";
 
 class RichTextEditor extends React.Component {
   constructor(props) {
@@ -53,9 +57,18 @@ class RichTextEditor extends React.Component {
 
   render() {
     const { editorState } = this.state;
+    const directional = true;
+    const hashtagConfig = {
+      trigger: "#",
+      separator: " ",
+    };
 
-    // If the user changes block type before entering any text, we can
-    // either style the placeholder or hide it. Let's just hide it now.
+    const rawContentState = convertToRaw(editorState.getCurrentContent());
+
+    const markup = draftToHtml(rawContentState, hashtagConfig, directional);
+    console.log("Array di elementi", rawContentState)
+    console.log("HTML", markup);
+    <ProjectDescription props={markup}/>
     let className = "RichEditor-editor";
     var contentState = editorState.getCurrentContent();
     if (!contentState.hasText()) {
@@ -86,6 +99,8 @@ class RichTextEditor extends React.Component {
             ref="editor"
             spellCheck={true}
           />
+        </div>
+        <div>
         </div>
       </div>
     );

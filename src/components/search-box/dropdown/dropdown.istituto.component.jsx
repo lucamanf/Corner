@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import ArrowUpSVG from "./svg/arrow.up.component";
 
-export default function DropDownI() {
+export default function DropDownI({ prompt, value, onChange }) {
   return (
     <Menu as="div" className="relative lg:w-60">
       {({ open }) => (
         <Fragment>
           <Menu.Button className="inline-flex justify-center w-full px-4 py-5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-md hover:bg-gray-50 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-gray-100">
-            Tutti gli istituti
+            <span>{prompt}</span>
             <span className="w-5 h-5 ml-2 -mr-1">
               <ArrowUpSVG />
             </span>

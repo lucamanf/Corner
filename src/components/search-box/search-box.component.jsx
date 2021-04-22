@@ -3,6 +3,7 @@ import SearchSVG from "./svg/search.svg.component";
 import Select from "react-select";
 import DropDownI from "./dropdown/dropdown.istituto.component";
 import DropDownM from "./dropdown/dropdown.materia.component";
+import istituti from "./dropdown/file-json/istituti.json";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -13,7 +14,7 @@ export const SearchBox = ({ handleChange }) => (
   <div className="items-center p-4 bg-gray-200 border border-gray-300 rounded-md shadow-xl md:p-2">
     <div className="flex flex-col-reverse items-center flex-grow md:flex-row md:justify-end">
       <div className="grid grid-cols-2 pt-4 gap-14 sd:gap-10 md:gap-5 md:pt-0">
-        <DropDownI />
+        <DropDownI prompt="Tutti gli Istituiti" istituti={istituti}/>
         <DropDownM />
       </div>
       <div className="flex items-center p-2 bg-white rounded shadow-md md:flex-grow md:ml-5 text-grey">

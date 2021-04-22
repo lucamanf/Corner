@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import RichTextEditor from "../draftjs/RichTextEditor";
 
-export const ProjectDescription = () => {
+export const ProjectDescription = (props) => {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-xl">
@@ -56,6 +56,17 @@ export const ProjectDescription = () => {
             <button
               className="px-4 py-2 font-bold text-white bg-gray-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
               type="button"
+              onClick={() => {
+                console.log("PRINA DELLA FETCH");
+                console.log("STAMPO PROPS", props);
+                fetch("https://corner-mern.herokuapp.com/api/add", {
+                  method: "POST",
+                  body: {
+                    contenuto: props,
+                  },
+                });
+                console.log("DOPO DELLA FETCH");
+              }}
             >
               Aggiungi Progetto
             </button>
