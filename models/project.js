@@ -5,7 +5,7 @@ const projectSchema = new Schema({
     titolo:{type:String,required:true,maxLength: 60,trim:true},
     materia:{type:mongoose.ObjectId, required:true, ref: "Subject"},
     partecipanti:{type:[String],required:true},
-    date:{type: String,required:true},
+    anno_scolastico:{type: String,required:true},
     descrizione:{type:String,required:true,maxLength:200},
     contenuto:{type:Object,required:true},
     image_src:{type:String,required:true},
