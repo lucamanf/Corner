@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import ArrowUpSVG from "./svg/arrow.up.component";
 
-export default function DropDownI({ prompt, value, onChange }) {
+export default function DropDownI({ options, prompt }) {
   return (
     <Menu as="div" className="relative lg:w-60">
       {({ open }) => (
