@@ -31,10 +31,12 @@ export default class TextEditor extends Component {
     const markup = draftToHtml(rawContentState, hashConfig);
     console.log("MARKUP", markup);
     console.log("ARRAT", rawContentState);
+
     this.state.content = markup;
     console.log("Contenuto---", content);
     localStorage.setItem("content", content);
     console.log("Content in Local Storage", localStorage.getItem("content"));
+    console.log("Content in Local Storage", localStorage.getItem("token"));
     // <AddProject contents={content}/>
     return (
       <Editor
