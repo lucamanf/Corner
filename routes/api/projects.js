@@ -7,7 +7,7 @@ const auth = require('../../middleware/auth');
 
 router.post('/add', auth, (req, res) => {
 
-  const {titolo, materia, partecipanti, date, descrizione, contenuto, image_src} = req.body;
+  const {titolo, materia, partecipanti, anno_scolastico, descrizione, contenuto, image_src} = req.body;
 
 
   //Controllo se materia può essere postata
