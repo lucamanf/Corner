@@ -33,7 +33,7 @@ router.post('/add', auth, (req, res) => {
         image_src: image_src,
         contenuto: contenuto,
         descrizione: descrizione,
-        anno_scolastico: date,
+        anno_scolastico: anno_scolastico,
         partecipanti: partecipanti
       },
       { upsert: true },
