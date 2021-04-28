@@ -30,13 +30,13 @@ export default class TextEditor extends Component {
     const rawContentState = convertToRaw(editorState.getCurrentContent());
     const markup = draftToHtml(rawContentState, hashConfig);
     console.log("MARKUP", markup);
-    console.log("ARRAT", rawContentState);
+    console.log("ARRAY DI BLOCCHIs", rawContentState);
 
     this.state.content = markup;
     console.log("Contenuto---", content);
     localStorage.setItem("content", content);
     console.log("Content in Local Storage", localStorage.getItem("content"));
-    console.log("Content in Local Storage", localStorage.getItem("token"));
+    console.log("TOKEN", localStorage.getItem("token"));
     // <AddProject contents={content}/>
     return (
       <Editor
