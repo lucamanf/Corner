@@ -4,6 +4,7 @@ import Landing from "./components/layout/Landing";
 import Project from "./components/layout/cards/projects.component";
 import Routes from "./components/routing/Routes";
 import { LOGOUT } from "./actions/types";
+import { SmoothProvider } from "react-smooth-scrolling";
 
 // Redux
 import { Provider } from "react-redux";

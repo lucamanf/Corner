@@ -6,13 +6,32 @@ import Chimica from "./components/chimica.card.component";
 import Nautico from "./components/nautico.card.component";
 import Sanita from "./components/sanita.card.component";
 import Informatica from "./components/informatica.card.component";
+import barba from "@barba/core";
 
 export const Content = () => {
+  barba.init({
+    transitions: [
+      {
+        name: "opacity-transition",
+        leave(data) {
+          return gsap.to(data.current.container, {
+            opacity: 0,
+          });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, {
+            opacity: 0,
+          });
+        },
+      },
+    ],
+  });
+
   return (
     <>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <MainText />
-        <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-5 sm:grid-cols-2">
+        <div className="grid row-gap-5 mb-8 lg:gap-5 lg:grid-cols-4 sm:row-gap-5 sm:grid-cols-2">
           <Meccatronica />
           <Chimica />
           <Nautico />
